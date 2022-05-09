@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" fxFlexFill>
+  <div class="form" fxFlex="33" fxLayout="column wrap">
+    <div fxflex="50">
+      <mat-form-field>
+        <mat-label>Stadt</mat-label>
+        <input
+          matInput
+          placeholder="Stadt eingeben"
+          [value]="city"
+          (keyup.enter)="setCity($event.target.value)"
+        />
+      </mat-form-field>
+    </div>
+    <div fxflex="50">
+      <mat-form-field>
+        <mat-label>Einheit</mat-label>
+        <mat-select
+          [value]="selectedUnit"
+          (selectionChange)="changeUnit($event.value)"
+        >
+          <mat-option *ngFor="let unit of units" [value]="unit.key">
+            {{ unit.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <ng-container *ngIf="weatherData | async as data; else loading">
+    <div fxFlex="33" fxLayout="column" fxLayoutAlign="space-around center">
+      <div class="text text--temperature">
+        {{ data.main.temp }}°{{ getTemperatureSymbol() }}
+      </div>
+      <div class="text text--feel">
+        Gefühlt: {{ data.main.feels_like }}°{{ getTemperatureSymbol() }}
+      </div>
+    </div>
+    <div fxFlex="33">
+      <img [src]="getWeatherIconUrl(data)" alt="weather icon" />
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-spinner fxFlex="66"></mat-spinner>
+  </ng-template>
+</div>

@@ -1,0 +1,28 @@
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="space-around"
+  fxLayoutGap="10px grid"
+>
+  <ipt-card
+    fxFlex="50"
+    heading="Weather"
+    detailsRouteId="weather"
+    [backgroundImageUrl]="weatherBackgroundImageUrl"
+  >
+    <ipt-weather-card></ipt-weather-card>
+  </ipt-card>
+  <ipt-card
+    fxFlex="50"
+    heading="Aare"
+    [backgroundImageUrl]="aareBackgroundImageUrl"
+  >
+    <ipt-aare-card></ipt-aare-card>
+  </ipt-card>
+  <ipt-card
+    fxFlex="100"
+    heading="Beer or Swim?"
+    [backgroundImageUrl]="finalBackgroundImageUrl"
+  >
+    <ipt-final-card></ipt-final-card>
+  </ipt-card>
+</div>

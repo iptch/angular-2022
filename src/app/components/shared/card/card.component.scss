@@ -1,0 +1,36 @@
+.card {
+  background-color: hsla(0, 0%, 100%, 0.25);
+  background-blend-mode: overlay;
+  color: white;
+}
+
+.card:hover {
+  background-color: hsla(0, 0%, 100%, 0.4);
+}
+
+.mat-card-header-text {
+  margin-left: 0;
+}
+
+.mat-card-title-group {
+  display: block;
+}
+
+.mat-card-title {
+  font-size: 28px;
+}
+
+.mat-card-content {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.a {
+  color: white;
+}

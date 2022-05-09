@@ -1,0 +1,24 @@
+<div class="content" fxLayoutAlign="center center">
+  <ng-container
+    *ngIf="
+      (weatherTemperature | async) && (aareTemperature | async);
+      else loading
+    "
+  >
+    <span class="text"
+      >{{ weatherTemperature | async }}°C & {{ aareTemperature | async }}°C =
+    </span>
+
+    <span *ngIf="isWarmEnough | async; else beer">
+      <img [src]="swimImageUrl" height="150" alt="Swimming" />
+    </span>
+
+    <ng-template #beer>
+      <img [src]="beerImageUrl" height="150" alt="Beer" />
+    </ng-template>
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

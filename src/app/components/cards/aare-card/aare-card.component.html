@@ -1,0 +1,10 @@
+<div class="card" fxLayout="column" fxLayoutAlign="space-between center">
+  <ng-container *ngIf="aareData | async as data; else loading">
+    <div class="text text--main" fxFlex="100">{{ data.aare }}°C</div>
+    <div class="text text--description" fxFlex="100">{{ data.text }}</div>
+  </ng-container>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

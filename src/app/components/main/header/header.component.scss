@@ -1,0 +1,18 @@
+.header {
+  color: #064266;
+  background: #fff;
+}
+
+.logo {
+  max-height: 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.title {
+  margin-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
